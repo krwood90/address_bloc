@@ -19,7 +19,7 @@
      entries.insert(index, Entry.new(name, phone_number, email))
    end
    
-   def import_from_csv(fie_name)
+   def import_from_csv(file_name)
        csv_text = File.read(file_name)
        csv = CSV.parse(csv_text, headers: true, skip_blanks: true)
        
@@ -33,7 +33,7 @@
        delete_entry = nil
        
        entries.each do |entry|
-           if name == entry.name && phone == entry.phone_number && email == entry.email
+           if name == entry.name && phone_number == entry.phone_number && email == entry.email
                delete_entry = entry
            end
        end
